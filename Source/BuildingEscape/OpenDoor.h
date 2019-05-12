@@ -30,9 +30,11 @@ private:
 	float OpenAngle = 90.0f;
 
 	UPROPERTY(EditAnywhere)
-	ATriggerVolume*  PressurePlate;
+	ATriggerVolume*  PressurePlateR;
 
 	UPROPERTY(EditAnywhere)
+	ATriggerVolume*  PressurePlateL;
+
 	AActor* ActorThatOpens; // Remember pawn inherits from actor
 
 	void OpenDoor();
