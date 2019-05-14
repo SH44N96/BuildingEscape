@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "PhysicsEngine/PhysicsHandleComponent.h"
 #include "DrawDebugHelpers.h"
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
@@ -26,5 +27,8 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 private:
-	float Reach = 100.f;		
+	// How far ahaead of the player can we reach in cm
+	float Reach = 100.f;
+
+	UPhysicsHandleComponent* PhysicsHandle = nullptr;
 };
