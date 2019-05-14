@@ -43,5 +43,5 @@ private:
 	bool Pressured = false;
 
 	// Returns total mass in kg
-	float GetTotalMassOfActorsOnPlate();
+	float GetTotalMassOfActorsOnPlate(ATriggerVolume* PressurePlate);	
 };
