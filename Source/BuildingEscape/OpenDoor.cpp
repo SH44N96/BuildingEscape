@@ -1,6 +1,5 @@
 // Copyright SH44N96.
 
-
 #include "OpenDoor.h"
 
 // Sets default values for this component's properties
@@ -9,8 +8,6 @@ UOpenDoor::UOpenDoor()
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
-
-	// ...
 }
 
 // Called when the game starts
@@ -40,7 +37,7 @@ void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 
 	// Poll the Trigger Volume
 	// If the ActorThatOpens is in the volume
-	if(PressurePlateR->IsOverlappingActor(ActorThatOpens)) // && PressurePlateL->IsOverlappingActor(ActorThatOpens)
+	if(PressurePlateR->IsOverlappingActor(ActorThatOpens) && PressurePlateL->IsOverlappingActor(ActorThatOpens))
 	{
 		Pressured = true;
 	}
@@ -59,4 +56,3 @@ void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 		OpenDoor();
 	}
 }
-
