@@ -20,7 +20,7 @@ void UOpenDoor::BeginPlay()
 
 	Owner = GetOwner();
 	ActorThatOpens = GetWorld()->GetFirstPlayerController()->GetPawn();
-	CloseDoor();
+	OpenDoor();
 }
 
 void UOpenDoor::OpenDoor()
@@ -41,6 +41,20 @@ void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 	// Poll the Trigger Volume
 	// If the ActorThatOpens is in the volume
 	if(PressurePlateR->IsOverlappingActor(ActorThatOpens)) // && PressurePlateL->IsOverlappingActor(ActorThatOpens)
+	{
+		Pressured = true;
+	}
+
+	if(GetWorld()->GetTimeSeconds() > 1.5f)
+	{
+		FirstCloseDoor = true;
+	}
+
+	if(FirstCloseDoor && !Pressured)
+	{
+		CloseDoor();
+	}
+	else if(FirstCloseDoor && Pressured)
 	{
 		OpenDoor();
 	}

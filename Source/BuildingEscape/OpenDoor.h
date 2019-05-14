@@ -40,4 +40,7 @@ private:
 
 	AActor* ActorThatOpens; // Remember pawn inherits from actor
 	AActor* Owner; // The owning door
+
+	bool FirstCloseDoor = false;
+	bool Pressured = false;
 };
