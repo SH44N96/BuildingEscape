@@ -35,16 +35,10 @@ public:
 private:
 
 	UPROPERTY(EditAnywhere)
-	ATriggerVolume*  PressurePlateR = nullptr;
+	ATriggerVolume*  PressurePlate = nullptr;
 
 	UPROPERTY(EditAnywhere)
-	ATriggerVolume*  PressurePlateL = nullptr;
-
-	UPROPERTY(EditAnywhere)
-	float TriggerMassR = 20.f;
-
-	UPROPERTY(EditAnywhere)
-	float TriggerMassL = 10.f;
+	float TriggerMass = 0.f;
 
 	// The owning door
 	AActor* Owner = nullptr;
