@@ -19,6 +19,11 @@ void UOpenDoor::BeginPlay()
 
 	Owner = GetOwner();
 	OpenDoor();
+
+	if(!PressurePlateR || !PressurePlateL)
+	{
+		UE_LOG(LogTemp, Error, TEXT("%s missing pressure plate"), *Owner->GetName())
+	}
 }
 
 void UOpenDoor::OpenDoor()
@@ -36,6 +41,10 @@ void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompon
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
+	if(!PressurePlateR || !PressurePlateL)
+	{
+		return;
+	}
 	// Poll the Trigger Volume
 	if(GetTotalMassOfActorsOnPlate(PressurePlateR) > 20.f && GetTotalMassOfActorsOnPlate(PressurePlateL) > 10.f) // TODO make into a parameter
 	{

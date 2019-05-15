@@ -32,12 +32,13 @@ private:
 	float OpenAngle = -60.0f;
 
 	UPROPERTY(EditAnywhere)
-	ATriggerVolume*  PressurePlateR;
+	ATriggerVolume*  PressurePlateR = nullptr;
 
 	UPROPERTY(EditAnywhere)
-	ATriggerVolume*  PressurePlateL;
+	ATriggerVolume*  PressurePlateL = nullptr;
 
-	AActor* Owner; // The owning door
+	// The owning door
+	AActor* Owner = nullptr;
 
 	bool FirstCloseDoor = false;
 	bool Pressured = false;
