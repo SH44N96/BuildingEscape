@@ -1,0 +1,9 @@
+{
+	"files.exclude": {
+		"C:/Users/SHAAN/Desktop/Unreal Engine/BuildingEscape/.git": true,
+		"C:/Users/SHAAN/Desktop/Unreal Engine/BuildingEscape/.vscode": true,
+		"C:/Users/SHAAN/Desktop/Unreal Engine/BuildingEscape/Content": true,
+		"C:/Users/SHAAN/Desktop/Unreal Engine/BuildingEscape/Intermediate": true,
+		"C:/Users/SHAAN/Desktop/Unreal Engine/BuildingEscape/Saved": true
+	}
+}
